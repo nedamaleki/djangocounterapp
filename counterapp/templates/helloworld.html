@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Counter|Home{% endblock %}
+
+{% block content %}
+
+    <!-- <button class="btn btn-secondary">aaaaaaa</button> -->
+	<h1 style="margin-left: 120px">{{number}}</h1>
+	<a href="/increment/" class="btn btn-success"> Increment </a>
+	<a href="/reset/" class="btn btn-warning"> Reset </a>
+	<a href="/decrement/" class="btn btn-danger"> decrement </a>
+
+
+{% endblock %}
