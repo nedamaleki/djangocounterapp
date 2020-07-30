@@ -14,7 +14,6 @@ def addtask (request):
 	import requests
 	import json
 
-	
 	if request.method == 'POST':
 		task=TodoModelForm(request.POST or None)
 		if task.is_valid():
@@ -22,3 +21,9 @@ def addtask (request):
 			messages.success(request, ("Task Has Been Added"))
 
 	return redirect ('todoview')
+
+def deletetask(request,task_id):
+	item = TodoModel.objects.get(pk=task_id)
+	item.delete()
+	messages.success(request,'Task Has Been Deleted!')
+	return redirect('todoview')

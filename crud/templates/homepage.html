@@ -12,7 +12,7 @@
     </form>
 	
 	{% for task in alltasks %}
-		<p> id:{{task.id}}-- task: {{task.task}}</p>
+		<p> id:{{task.id}}-- task: {{task.task}} <a href="{% url 'deletetask' task.id %}" class="btn btn-danger">Delete </a></p>
 	{% endfor %}
 
 {% endblock %}
