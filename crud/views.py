@@ -27,3 +27,21 @@ def deletetask(request,task_id):
 	task.delete()
 	messages.success(request,'Task Has Been Deleted!')
 	return redirect('todoview')
+
+def edit(request,task_id):
+	if request.method == 'POST':
+		task = TodoModel.objects.get(pk=task_id)
+		form = TodoModelForm(request.POST or None, instance = task)
+
+		if form.is_valid():
+			form.save()
+			messages.success(request,'Task Has Been Edited!')
+		return redirect('todoview')
+	else:
+		task = TodoModel.objects.get(pk=task_id)
+		context = {'task': task}
+		return render(request, 'edit.html', context)
+
+	
+	
+	

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} CRUD | Edit{% endblock %}
+
+{% block content %}
+    <!-- <button class="btn btn-secondary">aaaaaaa</button> -->
+    <form  method="POST" > 
+    	{% csrf_token %}
+       <input type="text" name="task" placeholder="{{ task.task }}" value = {{task.task}}>
+       <input type="submit" value="Update" class="btn btn-success" name="" >  
+       
+    </form>
+	
+{% endblock %}
+

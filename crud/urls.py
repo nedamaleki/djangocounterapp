@@ -6,5 +6,7 @@ urlpatterns = [
     path ('todoview/', views.todoview, name='todoview'),
     path ('todoview/addtask/', views.addtask, name='addtask' ),
     path ('todoview/deletetask/<task_id>', views.deletetask, name='deletetask' ),
+    path ('todoview/edit/<task_id>', views.edit, name='edit' ),
+
 
 ]
