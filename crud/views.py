@@ -23,7 +23,7 @@ def addtask (request):
 	return redirect ('todoview')
 
 def deletetask(request,task_id):
-	item = TodoModel.objects.get(pk=task_id)
-	item.delete()
+	task = TodoModel.objects.get(pk=task_id)
+	task.delete()
 	messages.success(request,'Task Has Been Deleted!')
 	return redirect('todoview')
