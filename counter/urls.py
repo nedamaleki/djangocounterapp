@@ -4,5 +4,6 @@ from counterapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('', include ('counterapp.urls'))
+    path ('', include ('counterapp.urls')),
+    path ('', include ('crud.urls')),
 ]
